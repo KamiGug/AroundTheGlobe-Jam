@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bok465cdqd12g"
-path="res://.godot/imported/Basic Charakter Actions.png-b6249c3379b72c306d107a61d9fdd5c0.ctex"
+uid="uid://d2a6v7i3odshw"
+path="res://.godot/imported/Egg_And_Nest.png-f21bbe072667fd12d949bb5672899433.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Basic Charakter Actions.png"
-dest_files=["res://.godot/imported/Basic Charakter Actions.png-b6249c3379b72c306d107a61d9fdd5c0.ctex"]
+source_file="res://Assets/Placeholders/Characters/Egg_And_Nest.png"
+dest_files=["res://.godot/imported/Egg_And_Nest.png-f21bbe072667fd12d949bb5672899433.ctex"]
 
 [params]
 
