@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brdt1vnqtpwal"
-path="res://.godot/imported/Sprout Lands defautlt palette snip.PNG-dce86285688632cd1f4e115f9f604757.ctex"
+uid="uid://bynuxeim2qr0q"
+path="res://.godot/imported/_PH_Paths.png-621d757181436eb3fd2ef770ddb34175.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/Sprout Lands color pallet/Sprout Lands defautlt palette snip.PNG"
-dest_files=["res://.godot/imported/Sprout Lands defautlt palette snip.PNG-dce86285688632cd1f4e115f9f604757.ctex"]
+source_file="res://Assets/Objects/_PH_Paths.png"
+dest_files=["res://.godot/imported/_PH_Paths.png-621d757181436eb3fd2ef770ddb34175.ctex"]
 
 [params]
 

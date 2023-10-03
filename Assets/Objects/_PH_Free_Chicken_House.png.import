@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjyboy8ufc3cu"
-path="res://.godot/imported/Basic Plants.png-2c96be20c673e51b8adfcd8c3c58d752.ctex"
+uid="uid://drlbr1y7nppyr"
+path="res://.godot/imported/_PH_Free_Chicken_House.png-85d7ee5c91e4a916be81ea2670a6c625.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/Objects/Basic Plants.png"
-dest_files=["res://.godot/imported/Basic Plants.png-2c96be20c673e51b8adfcd8c3c58d752.ctex"]
+source_file="res://Assets/Objects/_PH_Free_Chicken_House.png"
+dest_files=["res://.godot/imported/_PH_Free_Chicken_House.png-85d7ee5c91e4a916be81ea2670a6c625.ctex"]
 
 [params]
 

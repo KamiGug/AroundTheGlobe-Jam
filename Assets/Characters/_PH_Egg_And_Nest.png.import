@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1b4fil8j3xmb"
-path="res://.godot/imported/Hills.png-00a8ca3929ca09636db3201bb60a5c09.ctex"
+uid="uid://d2a6v7i3odshw"
+path="res://.godot/imported/_PH_Egg_And_Nest.png-3eb94b64ed857a113cb985eb97f2a5a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/Tilesets/Hills.png"
-dest_files=["res://.godot/imported/Hills.png-00a8ca3929ca09636db3201bb60a5c09.ctex"]
+source_file="res://Assets/Characters/_PH_Egg_And_Nest.png"
+dest_files=["res://.godot/imported/_PH_Egg_And_Nest.png-3eb94b64ed857a113cb985eb97f2a5a3.ctex"]
 
 [params]
 

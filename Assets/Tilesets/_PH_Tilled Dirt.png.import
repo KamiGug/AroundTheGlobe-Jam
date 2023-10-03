@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t13et75ui0mm"
-path="res://.godot/imported/Egg item.png-e5929a67e9d48e6f87d3e0f79e4db1b0.ctex"
+uid="uid://l2e3o4v8wvxw"
+path="res://.godot/imported/_PH_Tilled Dirt.png-c0bfacb218e13d91cda0d4c147d91c2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/Objects/Egg item.png"
-dest_files=["res://.godot/imported/Egg item.png-e5929a67e9d48e6f87d3e0f79e4db1b0.ctex"]
+source_file="res://Assets/Tilesets/_PH_Tilled Dirt.png"
+dest_files=["res://.godot/imported/_PH_Tilled Dirt.png-c0bfacb218e13d91cda0d4c147d91c2c.ctex"]
 
 [params]
 

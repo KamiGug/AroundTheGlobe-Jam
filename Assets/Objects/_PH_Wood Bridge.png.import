@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bok465cdqd12g"
-path="res://.godot/imported/Basic Charakter Actions.png-a2d2cca986fb8fdb38c906dca553dd64.ctex"
+uid="uid://c1mjvpay8o48y"
+path="res://.godot/imported/_PH_Wood Bridge.png-9e4c940556f207ca8591f05a19390fdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/Characters/Basic Charakter Actions.png"
-dest_files=["res://.godot/imported/Basic Charakter Actions.png-a2d2cca986fb8fdb38c906dca553dd64.ctex"]
+source_file="res://Assets/Objects/_PH_Wood Bridge.png"
+dest_files=["res://.godot/imported/_PH_Wood Bridge.png-9e4c940556f207ca8591f05a19390fdd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2hjk3ni6x756"
-path="res://.godot/imported/Tools.png-46a7aa283ebff7a1292ebbb5adf95b1f.ctex"
+uid="uid://cpck80rkyvchn"
+path="res://.godot/imported/_PH_Grass.png-0e131b7a3a802a62e649dab85a434e4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/Characters/Tools.png"
-dest_files=["res://.godot/imported/Tools.png-46a7aa283ebff7a1292ebbb5adf95b1f.ctex"]
+source_file="res://Assets/Tilesets/_PH_Grass.png"
+dest_files=["res://.godot/imported/_PH_Grass.png-0e131b7a3a802a62e649dab85a434e4f.ctex"]
 
 [params]
 

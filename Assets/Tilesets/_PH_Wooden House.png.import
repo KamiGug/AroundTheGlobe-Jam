@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drlbr1y7nppyr"
-path="res://.godot/imported/Free_Chicken_House.png-aac4cb27ddcd38586b6214648109abd5.ctex"
+uid="uid://dyu2siqr7rpmt"
+path="res://.godot/imported/_PH_Wooden House.png-128722cf64dbdbd5a68214e0234b7468.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholders/Objects/Free_Chicken_House.png"
-dest_files=["res://.godot/imported/Free_Chicken_House.png-aac4cb27ddcd38586b6214648109abd5.ctex"]
+source_file="res://Assets/Tilesets/_PH_Wooden House.png"
+dest_files=["res://.godot/imported/_PH_Wooden House.png-128722cf64dbdbd5a68214e0234b7468.ctex"]
 
 [params]
 
