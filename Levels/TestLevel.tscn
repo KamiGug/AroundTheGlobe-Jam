@@ -11,14 +11,3 @@ position = Vector2(0, -2)
 [node name="Camera2D" parent="." instance=ExtResource("2_6w481")]
 target_path = NodePath("../MainChar")
 
-[node name="ControlsOverlay" type="Node2D" parent="Camera2D"]
-z_index = 300
-
-[node name="ControlsText" type="RichTextLabel" parent="Camera2D/ControlsOverlay"]
-offset_left = -232.0
-offset_top = 48.0
-offset_right = -18.0
-offset_bottom = 157.0
-bbcode_enabled = true
-text = "Use WASD to move"
-deselect_on_focus_loss_enabled = false
