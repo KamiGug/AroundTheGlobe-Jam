@@ -12,8 +12,9 @@ position = Vector2(0, -2)
 target_path = NodePath("../MainChar")
 
 [node name="ControlsOverlay" type="Node2D" parent="Camera2D"]
+z_index = 300
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D"]
+[node name="ControlsText" type="RichTextLabel" parent="Camera2D/ControlsOverlay"]
 offset_left = -232.0
 offset_top = 48.0
 offset_right = -18.0
