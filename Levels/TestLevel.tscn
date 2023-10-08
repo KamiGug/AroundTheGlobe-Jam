@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://che4mx5qc4ph"]
+[gd_scene load_steps=17 format=3 uid="uid://che4mx5qc4ph"]
 
+[ext_resource type="Script" path="res://Code/debug/TestLevel.gd" id="1_e23sx"]
 [ext_resource type="PackedScene" uid="uid://b7rkwf7jcge3w" path="res://Prefabs/Characters/MainChar.tscn" id="1_ojxgm"]
 [ext_resource type="PackedScene" uid="uid://uxkeyuswwyol" path="res://Prefabs/Camera.tscn" id="2_6w481"]
 [ext_resource type="Texture2D" uid="uid://cpck80rkyvchn" path="res://Assets/Tilesets/_PH_Grass.png" id="3_6080s"]
@@ -705,14 +706,14 @@ sources/4 = SubResource("TileSetAtlasSource_n57af")
 sources/5 = SubResource("TileSetAtlasSource_2q2id")
 sources/6 = SubResource("TileSetAtlasSource_t5n1l")
 
-[node name="Node2D" type="Node2D"]
+[node name="TestLevel" type="Node2D"]
 position = Vector2(0, -2)
+script = ExtResource("1_e23sx")
 
 [node name="MainChar" parent="." instance=ExtResource("1_ojxgm")]
-speed = 200.0
 
-[node name="Camera2D" parent="." instance=ExtResource("2_6w481")]
-target_path = NodePath("../MainChar")
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_6w481")]
+target = NodePath("../MainChar")
 
 [node name="MapPH" type="TileMap" parent="."]
 z_index = -10
