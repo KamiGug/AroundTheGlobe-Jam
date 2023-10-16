@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hq3o0ntjjh7a"]
+
+[ext_resource type="Script" path="res://Code/Skills/PackageUser.gd" id="1_u8vwe"]
+
+[node name="PackageUser" type="StaticBody2D"]
+script = ExtResource("1_u8vwe")

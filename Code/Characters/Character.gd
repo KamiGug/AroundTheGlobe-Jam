@@ -7,6 +7,7 @@ var iframe_count : int = 0 #important to all characters to have iframes (or they
 var max_health : int = 3000
 var health : int = max_health
 var iframes_after_damage = 3
+var direction:Vector2
 
 @onready var animation_tree = $AnimationTree #get animation tree #all characters will have one of those
 @onready var state_machine = animation_tree.get("parameters/playback") #that is the thing that determines the states
@@ -54,7 +55,7 @@ func handle_collision(collision : KinematicCollision2D):
 
 func take_damage(dmg : int):
 	if iframe_count > 0:
-		pass
+		return
 	if dmg >= health:
 		die()
 	else:
@@ -73,12 +74,14 @@ func die():
 	
 	
 #animation functions:	
+@warning_ignore("shadowed_variable")
 func update_animation_tree(direction):
 	if direction.length() > 0.1:
 		direction = direction.normalized()
 		animation_tree.set("parameters/Idle/blend_position", direction)
 		animation_tree.set("parameters/Walk/blend_position", direction)
 		
+@warning_ignore("shadowed_variable")
 func pick_new_state(direction):
 	if direction.length() > 0.7:
 		state_machine.travel("Walk")
