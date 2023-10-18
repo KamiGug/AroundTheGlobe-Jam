@@ -6,7 +6,7 @@ var current_cd: float = 0
 @export var max_charges:int = 1
 var current_charges:int 
 
-signal skill_state
+#signal skill_state
 
 var direction_vector: Vector2
 
@@ -14,10 +14,12 @@ var direction_vector: Vector2
 #@onready var state_machine = animation_tree.get("parameters/playback") #that is the thing that determines the states
 
 func _init():
-	current_charges = max_charges
+	
 	pass
 
 func _ready():
+	current_charges = max_charges
+	#current_charges = max_charges
 	pass
 
 func _process(_delta):	
@@ -59,7 +61,8 @@ func lower_cd(_delta: float):
 		current_cd = current_cd - _delta
 		if current_cd <=0 && current_charges < max_charges :
 			current_charges += 1
-			current_cd = max_cd + current_cd #time that was over what was necessary is accounted for #no loss of time here xD
+			if current_charges < max_charges:
+				current_cd = max_cd + current_cd #time that was over what was necessary is accounted for #no loss of time here xD
 	
-func push_skill_state():
-	skill_state.emit(current_cd, current_charges)
+#func push_skill_state():
+#	skill_state.emit(current_cd, current_charges)

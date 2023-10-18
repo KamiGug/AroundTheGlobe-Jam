@@ -17,19 +17,19 @@ signal add_iframe
 func _init():
 	#max_cd = 7
 	#max_charges = 3
-	
-	super()
+	pass
+	#super()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	iframe_count = ceil(dash_length / (get_physics_process_delta_time() * speed))
+	super()
 	#set_process(false)
-	set_physics_process(false)
+	#set_physics_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	lower_cd(_delta)
-	push_skill_state()
 	
 func _physics_process(delta):
 	if dash_length > travelled + speed * delta:

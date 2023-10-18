@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://che4mx5qc4ph"]
+[gd_scene load_steps=18 format=3 uid="uid://che4mx5qc4ph"]
 
 [ext_resource type="Script" path="res://Code/debug/TestLevel.gd" id="1_e23sx"]
 [ext_resource type="PackedScene" uid="uid://uxkeyuswwyol" path="res://Prefabs/Camera.tscn" id="2_6w481"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://inkd25318te3" path="res://Assets/Tilesets/_PH_Water.png" id="7_w3128"]
 [ext_resource type="Texture2D" uid="uid://dyu2siqr7rpmt" path="res://Assets/Tilesets/_PH_Wooden House.png" id="8_lkkap"]
 [ext_resource type="PackedScene" uid="uid://dep152alge1ow" path="res://Prefabs/Characters/MainCharacter/MainCharacter.tscn" id="9_x1fyk"]
+[ext_resource type="PackedScene" uid="uid://cmjvny3fqvya6" path="res://Prefabs/UI/ingame/IngameOverlay.tscn" id="10_diq18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h60dj"]
 texture = ExtResource("3_6080s")
@@ -737,3 +738,17 @@ layer_1/tile_data = PackedInt32Array(-131086, 131075, 2, -131087, 65539, 2, -131
 
 [node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_6w481")]
 target = NodePath("../MainCharacter")
+
+[node name="IngameOverlay" parent="." instance=ExtResource("10_diq18")]
+
+[node name="SkillIcon" parent="IngameOverlay/SkillIconContainer" index="0" node_paths=PackedStringArray("skill_to_monitor")]
+skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Dash")
+
+[node name="SkillIcon2" parent="IngameOverlay/SkillIconContainer" index="1" node_paths=PackedStringArray("skill_to_monitor")]
+skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/PackageUser")
+
+[node name="SkillIcon5" parent="IngameOverlay/SkillIconContainer" index="4" node_paths=PackedStringArray("skill_to_monitor")]
+skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Block")
+
+[editable path="MainCharacter"]
+[editable path="IngameOverlay"]

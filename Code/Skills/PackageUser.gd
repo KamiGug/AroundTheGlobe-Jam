@@ -9,18 +9,18 @@ var package_prefab: PackedScene;
 func _init():
 	#max_cd = 5
 	#max_charges = 1
-	super()
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#speed = length / (get_physics_process_delta_time() * frame_count)
+	super()
 	root = get_window().get_child(0)
 	package_prefab = preload("res://Prefabs/Skills/SkillProjectiles/Package.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	lower_cd(_delta)
-	push_skill_state()
 	pass
 
 func _use(_direction:Vector2):
