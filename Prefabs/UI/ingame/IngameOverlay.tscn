@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmjvny3fqvya6"]
+
+[ext_resource type="PackedScene" uid="uid://be6rwc42a7ajm" path="res://Prefabs/UI/ingame/SkillIcon.tscn" id="1_sucak"]
+
+[sub_resource type="SystemFont" id="SystemFont_fxd8c"]
+font_weight = 300
+subpixel_positioning = 0
+msdf_size = 30
+
+[sub_resource type="Theme" id="Theme_17kcv"]
+default_font = SubResource("SystemFont_fxd8c")
+default_font_size = 10
+
+[node name="IngameOverlay" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 10
+
+[node name="ControlsText" type="RichTextLabel" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.143
+anchor_bottom = 0.089
+offset_left = 57.0
+offset_top = 757.0
+offset_right = 32.44
+offset_bottom = 745.88
+scale = Vector2(3, 3)
+size_flags_horizontal = 0
+mouse_filter = 2
+theme = SubResource("Theme_17kcv")
+bbcode_enabled = true
+text = "Use WASD to move
+Use Q to throw a package
+Use SPACE to dash
+Use SHIFT to block
+(!)Use LMB to attack with the first weapon
+(!)use RMB to attack with the second weapon"
+scroll_active = false
+deselect_on_focus_loss_enabled = false
+
+[node name="SkillIconContainer" type="HBoxContainer" parent="."]
+offset_left = 1171.0
+offset_top = 844.0
+offset_right = 1846.0
+offset_bottom = 999.0
+
+[node name="SkillIcon" parent="SkillIconContainer" instance=ExtResource("1_sucak")]
+layout_mode = 2
+
+[node name="SkillIcon2" parent="SkillIconContainer" instance=ExtResource("1_sucak")]
+layout_mode = 2
+
+[node name="SkillIcon3" parent="SkillIconContainer" instance=ExtResource("1_sucak")]
+layout_mode = 2
+
+[node name="SkillIcon4" parent="SkillIconContainer" instance=ExtResource("1_sucak")]
+layout_mode = 2
+
+[node name="SkillIcon5" parent="SkillIconContainer" instance=ExtResource("1_sucak")]
+layout_mode = 2

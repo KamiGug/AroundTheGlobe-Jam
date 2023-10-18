@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx00v5eh8f615"]
+
+[ext_resource type="Script" path="res://Code/Skills/Dash.gd" id="1_vsv1y"]
+
+[node name="Dash" type="StaticBody2D"]
+script = ExtResource("1_vsv1y")
