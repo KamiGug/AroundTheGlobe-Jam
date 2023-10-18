@@ -7,7 +7,7 @@ const START_DIST: float = 10
 var package_prefab: PackedScene;
 
 func _init():
-	max_cd = 5
+	#max_cd = 5
 	#max_charges = 1
 	super()
 
@@ -20,6 +20,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	lower_cd(_delta)
+	push_skill_state()
 	pass
 
 func _use(_direction:Vector2):

@@ -23,6 +23,7 @@ func _enter(anim_tree: AnimationTree, state_machine, direction:Vector2):
 	has_to_finish = false
 	can_finish = false
 	
+	
 func _exit(anim_tree: AnimationTree, state_machine):
 	super(anim_tree,state_machine)
 	_animate(anim_tree,state_machine)

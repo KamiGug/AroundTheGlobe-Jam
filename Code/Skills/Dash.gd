@@ -15,8 +15,8 @@ signal dash_speed
 signal add_iframe
 
 func _init():
-	max_cd = 7
-	max_charges = 3
+	#max_cd = 7
+	#max_charges = 3
 	
 	super()
 	
@@ -29,8 +29,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	lower_cd(_delta)
-	print("CD: ", current_cd, " charges: ", current_charges)
-	pass
+	push_skill_state()
 	
 func _physics_process(delta):
 	if dash_length > travelled + speed * delta:

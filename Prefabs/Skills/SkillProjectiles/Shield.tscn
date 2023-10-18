@@ -7,6 +7,8 @@
 size = Vector2(19, 6)
 
 [node name="Shield" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 64
 script = ExtResource("1_htf57")
 life_time = -1.0
 

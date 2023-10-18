@@ -6,6 +6,8 @@ var current_cd: float = 0
 @export var max_charges:int = 1
 var current_charges:int 
 
+signal skill_state
+
 var direction_vector: Vector2
 
 #@onready var animation_tree = $AnimationTree #get animation tree #all characters will have one of those
@@ -59,4 +61,5 @@ func lower_cd(_delta: float):
 			current_charges += 1
 			current_cd = max_cd + current_cd #time that was over what was necessary is accounted for #no loss of time here xD
 	
-
+func push_skill_state():
+	skill_state.emit(current_cd, current_charges)

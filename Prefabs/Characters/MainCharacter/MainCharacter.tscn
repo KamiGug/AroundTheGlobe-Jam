@@ -10,9 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://405soymm5gv8" path="res://Prefabs/Characters/States/DashState.tscn" id="5_kxkm0"]
 [ext_resource type="PackedScene" uid="uid://cl1e6vpp1kgtw" path="res://Prefabs/Skills/Block.tscn" id="9_5lpup"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_12wov"]
-size = Vector2(12, 5)
-
 [sub_resource type="Animation" id="Animation_glw7y"]
 resource_name = "Dash_down"
 length = 0.4
@@ -345,17 +342,18 @@ states/Walk/position = Vector2(512, 100)
 transitions = ["Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_asycn"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5uu5v"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_reqt2")]
 graph_offset = Vector2(-115.588, 53)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12wov"]
+size = Vector2(12, 5)
+
 [node name="MainCharacter" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 4
+collision_mask = 111
 script = ExtResource("1_v1xua")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_hobck")
 hframes = 4
 vframes = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5.5)
-shape = SubResource("RectangleShape2D_12wov")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -381,13 +379,23 @@ speed = 180.0
 [node name="SkillComponent" parent="." instance=ExtResource("3_t7x0f")]
 
 [node name="Dash" parent="SkillComponent" instance=ExtResource("3_awdwo")]
+dash_length = 75.0
+speed = 500.0
+max_cd = 5.0
+max_charges = 3
 
 [node name="PackageUser" parent="SkillComponent" instance=ExtResource("4_gspkf")]
 speed = 300.0
+max_cd = 5.0
 
 [node name="Block" parent="SkillComponent" node_paths=PackedStringArray("caster") instance=ExtResource("9_5lpup")]
 offset = 15.167
 caster = NodePath("../..")
+max_cd = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_12wov")
 
 [connection signal="end_skill_block" from="." to="SkillComponent/Block" method="_on_end_skill_block"]
 [connection signal="update_direction" from="." to="StateMachine/NormalState" method="_on_update_direction"]

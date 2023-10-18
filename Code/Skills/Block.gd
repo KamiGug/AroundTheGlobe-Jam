@@ -12,8 +12,8 @@ var i:int = 0
 var j:int = 0
 	
 func _init():
-	max_charges = 1
-	max_cd = 0.5
+	#max_charges = 1
+	#max_cd = 0.5
 	super()
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +25,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	lower_cd(delta)
+	push_skill_state()
 	pass
 
 func _use(_direction: Vector2):
