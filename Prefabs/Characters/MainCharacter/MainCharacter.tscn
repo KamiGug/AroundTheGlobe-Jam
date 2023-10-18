@@ -402,7 +402,6 @@ shape = SubResource("RectangleShape2D_12wov")
 [connection signal="use_skill_block" from="." to="SkillComponent/Block" method="_on_use_skill_block"]
 [connection signal="use_skill_dash" from="." to="SkillComponent/Dash" method="_on_use_skill_dash"]
 [connection signal="use_skill_package" from="." to="SkillComponent/PackageUser" method="_on_use_skill_package"]
-[connection signal="add_iframe" from="SkillComponent/Dash" to="." method="_on_add_iframe"]
 [connection signal="dash_finished" from="SkillComponent/Dash" to="StateMachine/DashState" method="_on_dash_finished"]
 [connection signal="dash_speed" from="SkillComponent/Dash" to="StateMachine/DashState" method="_on_dash_speed"]
 [connection signal="dash_started" from="SkillComponent/Dash" to="StateMachine" method="_on_dash_started"]

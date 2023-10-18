@@ -42,6 +42,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Weapon2"):
 		use_weapon_2.emit(get_local_mouse_position())
 		
+	#iframe_count = 1
+	if iframe_count > 0:
+		$Sprite2D.self_modulate  = Color("FFD700", 0.5)
+	else:
+		$Sprite2D.self_modulate  = Color("FFFFFF", 1)
+		
 		#read input for movement
 	#update_direction.emit(get_input_vector())
 	#if !block_input:
@@ -56,8 +62,8 @@ func _physics_process(_delta):
 	
 	move_and_slide()
 	
-	if iframe_count > 0:
-		iframe_count = iframe_count - 1
+	#if iframe_count > 0:
+	#	iframe_count = iframe_count - 1
 	
 #func get_input_vector():
 #	var tmp = Vector2(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
@@ -70,12 +76,12 @@ func _physics_process(_delta):
 func _on_add_iframe(count:int):
 	iframe_count += count
 
-@warning_ignore("shadowed_variable", "shadowed_variable_base_class")
-func _on_normal_state_set_velocity(velocity:Vector2):
-	self.velocity = velocity
-	pass # Replace with function body.
+#@warning_ignore("shadowed_variable", "shadowed_variable_base_class")
+#func _on_normal_state_set_velocity(velocity:Vector2):
+#	self.velocity = velocity
+#	pass # Replace with function body.
 
-@warning_ignore("shadowed_variable", "shadowed_variable_base_class")
-func _on_dash_state_set_velocity(velocity:Vector2):
-	self.velocity = velocity
-	pass # Replace with function body.
+#@warning_ignore("shadowed_variable", "shadowed_variable_base_class")
+#func _on_dash_state_set_velocity(velocity:Vector2):
+#	self.velocity = velocity
+#	pass # Replace with function body.

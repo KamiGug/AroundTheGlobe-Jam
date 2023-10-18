@@ -16,6 +16,7 @@ func _enter(direction:Vector2):
 	statee.animation_tree.set("parameters/Dash/blend_position", direction)
 	has_to_finish = false
 	can_finish = false
+	statee.iframe_count += 1
 	statee.collision_mask = statee.collision_mask - (1 + 8 + 16 + 64)
 	#set_physics_mask.emit()
 	#delete from mask passable enivironment mask from caster

@@ -19,6 +19,8 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	_set_velocity()
+	if statee.iframe_count > 0:
+		statee.iframe_count -= 1
 	#statee.velocity = velocity
 	#set_velocity.emit(velocity)
 

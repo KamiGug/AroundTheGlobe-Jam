@@ -3,10 +3,10 @@ class_name Character
 
 @export var speed = 160
 var flag = null #use a string like "player", "enemy", "npc", "destructible"
-var iframe_count : int = 0 #important to all characters to have iframes (or they'd die 2 fast)
+var iframe_count : int = 60 #important to all characters to have iframes (or they'd die 2 fast)
 var max_health : int = 3000
 var health : int = max_health
-var iframes_after_damage = 3
+var iframes_after_damage = 10
 var direction:Vector2
 
 @onready var animation_tree = $AnimationTree #get animation tree #all characters will have one of those
