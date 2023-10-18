@@ -43,7 +43,7 @@ func _process(_delta):
 		use_weapon_2.emit(get_local_mouse_position())
 		
 		#read input for movement
-	update_direction.emit(get_input_vector())
+	#update_direction.emit(get_input_vector())
 	#if !block_input:
 	#update_animation_tree(velocity)
 	#pick_new_state(velocity)
@@ -59,13 +59,12 @@ func _physics_process(_delta):
 	if iframe_count > 0:
 		iframe_count = iframe_count - 1
 	
-func get_input_vector():
-	var tmp = Vector2(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
-	Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
-	
-	if tmp != Vector2.ZERO: 
-		tmp = tmp.normalized()
-	return tmp
+#func get_input_vector():
+#	var tmp = Vector2(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+#	Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
+#	if tmp != Vector2.ZERO: 
+#		tmp = tmp.normalized()
+#	return tmp
 	
 
 func _on_add_iframe(count:int):

@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd20i4s4c2ljj"]
+
+[ext_resource type="PackedScene" uid="uid://chqstn8vgicr3" path="res://Prefabs/Environment/test/TestObstacle.tscn" id="1_gr1xm"]
+
+[node name="TestWall" type="Node2D"]
+
+[node name="TestObstacle" parent="." instance=ExtResource("1_gr1xm")]
+
+[node name="TestObstacle2" parent="." instance=ExtResource("1_gr1xm")]
+position = Vector2(14, 0)
+
+[node name="TestObstacle3" parent="." instance=ExtResource("1_gr1xm")]
+position = Vector2(-14, 0)
+
+[node name="TestObstacle4" parent="." instance=ExtResource("1_gr1xm")]
+position = Vector2(-28, 0)
+
+[node name="TestObstacle5" parent="." instance=ExtResource("1_gr1xm")]
+position = Vector2(28, 0)
+
+[node name="TestObstacle6" parent="." instance=ExtResource("1_gr1xm")]
+position = Vector2(-42, 0)
+
+[node name="TestObstacle7" parent="." instance=ExtResource("1_gr1xm")]
+position = Vector2(42, 0)

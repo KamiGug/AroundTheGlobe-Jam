@@ -346,6 +346,7 @@ graph_offset = Vector2(-115.588, 53)
 size = Vector2(12, 5)
 
 [node name="MainCharacter" type="CharacterBody2D" groups=["Player"]]
+y_sort_enabled = true
 collision_layer = 4
 collision_mask = 111
 script = ExtResource("1_v1xua")
@@ -368,8 +369,7 @@ parameters/Dash/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Walk/blend_position = Vector2(0, 0)
 
-[node name="StateMachine" parent="." node_paths=PackedStringArray("animation_tree") instance=ExtResource("3_l7lfc")]
-animation_tree = NodePath("../AnimationTree")
+[node name="StateMachine" parent="." instance=ExtResource("3_l7lfc")]
 
 [node name="NormalState" parent="StateMachine" instance=ExtResource("4_dhhn0")]
 speed = 180.0
@@ -402,8 +402,6 @@ shape = SubResource("RectangleShape2D_12wov")
 [connection signal="use_skill_block" from="." to="SkillComponent/Block" method="_on_use_skill_block"]
 [connection signal="use_skill_dash" from="." to="SkillComponent/Dash" method="_on_use_skill_dash"]
 [connection signal="use_skill_package" from="." to="SkillComponent/PackageUser" method="_on_use_skill_package"]
-[connection signal="set_velocity" from="StateMachine/NormalState" to="." method="_on_normal_state_set_velocity"]
-[connection signal="set_velocity" from="StateMachine/DashState" to="." method="_on_dash_state_set_velocity"]
 [connection signal="add_iframe" from="SkillComponent/Dash" to="." method="_on_add_iframe"]
 [connection signal="dash_finished" from="SkillComponent/Dash" to="StateMachine/DashState" method="_on_dash_finished"]
 [connection signal="dash_speed" from="SkillComponent/Dash" to="StateMachine/DashState" method="_on_dash_speed"]

@@ -23,7 +23,9 @@ func _physics_process(delta):
 	else:
 		move_and_collide((length-travelled) * direction)
 		travelled = length
-
+		#might add damage here
+		#might turn of physics_process here
+		
 	#collisions here #if they are to be here
 	
 

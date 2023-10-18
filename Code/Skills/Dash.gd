@@ -17,6 +17,7 @@ signal add_iframe
 func _init():
 	#max_cd = 7
 	#max_charges = 3
+	set_physics_process(true)
 	pass
 	#super()
 	
@@ -52,14 +53,7 @@ func die():
 func _use(_direction:Vector2):
 	if current_charges < 1 :
 		return
-		
-	#if !prev_finished:
-	#	return
-		
-	set_process(true)
 	set_physics_process(true)
-	
-	#prev_finished = true
 	direction_vector = _direction.normalized()
 	dash_started.emit(direction_vector)
 	add_iframe.emit(iframe_count)

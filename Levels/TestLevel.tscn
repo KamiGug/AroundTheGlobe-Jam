@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://che4mx5qc4ph"]
+[gd_scene load_steps=19 format=3 uid="uid://che4mx5qc4ph"]
 
 [ext_resource type="Script" path="res://Code/debug/TestLevel.gd" id="1_e23sx"]
 [ext_resource type="PackedScene" uid="uid://uxkeyuswwyol" path="res://Prefabs/Camera.tscn" id="2_6w481"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dyu2siqr7rpmt" path="res://Assets/Tilesets/_PH_Wooden House.png" id="8_lkkap"]
 [ext_resource type="PackedScene" uid="uid://dep152alge1ow" path="res://Prefabs/Characters/MainCharacter/MainCharacter.tscn" id="9_x1fyk"]
 [ext_resource type="PackedScene" uid="uid://cmjvny3fqvya6" path="res://Prefabs/UI/ingame/IngameOverlay.tscn" id="10_diq18"]
+[ext_resource type="PackedScene" uid="uid://cd20i4s4c2ljj" path="res://Prefabs/Environment/test/TestWall.tscn" id="11_ms2qe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h60dj"]
 texture = ExtResource("3_6080s")
@@ -707,7 +708,7 @@ texture = ExtResource("8_lkkap")
 6:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_kqt6r"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_h60dj")
 sources/2 = SubResource("TileSetAtlasSource_yl2f4")
@@ -749,6 +750,20 @@ skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/PackageUser")
 
 [node name="SkillIcon5" parent="IngameOverlay/SkillIconContainer" index="4" node_paths=PackedStringArray("skill_to_monitor")]
 skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Block")
+
+[node name="TestWall" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(-0.999996, 56)
+
+[node name="TestWall2" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(-56, 1)
+rotation = 1.57786
+
+[node name="TestWall3" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(-0.999996, -55)
+
+[node name="TestWall4" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(54, 1)
+rotation = 1.56523
 
 [editable path="MainCharacter"]
 [editable path="IngameOverlay"]
