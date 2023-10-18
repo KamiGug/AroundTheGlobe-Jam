@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl1e6vpp1kgtw"]
+
+[ext_resource type="Script" path="res://Code/Skills/Block.gd" id="1_qb82s"]
+
+[node name="Block" type="StaticBody2D"]
+script = ExtResource("1_qb82s")
+mitigation = 0.846
+offset = 9.5

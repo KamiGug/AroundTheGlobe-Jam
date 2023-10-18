@@ -1,32 +1,65 @@
-extends CharacterBody2D
+extends Character
+class_name MainChar
 
-@export var speed : float = 300;
+#get_local_mouse_position().normalized()
+
+
 @export var starting_direction : Vector2 = Vector2(0, 1.0)
 
-@export var is_dodge_unlocked : bool = false
-@export var is_package_unlocked : bool = false
-@export var is_mallet_unlocked : bool = false
+#skill signals
+signal use_skill_dash
+signal use_skill_package
+signal use_weapon_1
+signal use_weapon_2
+signal use_skill_block
+signal end_skill_block
 
+signal update_direction
 
-@onready var animation_tree = $AnimationTree
-@onready var state_machine = animation_tree.get("parameters/playback")
+func _init():
+	speed = 180
+	flag = "player"
 
 func _ready():
-	update_animation_tree(starting_direction)
-
-func _physics_process(delta):
-	#read input for movement
-	var input_direction = set_input_vector();
-		
-	velocity = lerp(velocity, input_direction * speed, 0.4)
+	pass
 	
-	#call animation functions
-	update_animation_tree(velocity)
-	pick_new_state(velocity)
+func _process(_delta):
+	if Input.is_action_just_pressed("Package"):
+		use_skill_package.emit(get_local_mouse_position())
+			
+	if Input.is_action_just_pressed("Dash"):
+		use_skill_dash.emit(get_local_mouse_position())
+		
+	if Input.is_action_just_pressed("Block"):
+		use_skill_block.emit(get_local_mouse_position())
+		
+	if Input.is_action_just_released("Block"):
+		end_skill_block.emit()
+		
+	if Input.is_action_just_pressed("Weapon1"):
+		use_weapon_1.emit(get_local_mouse_position())
+		
+	if Input.is_action_just_pressed("Weapon2"):
+		use_weapon_2.emit(get_local_mouse_position())
+		
+		#read input for movement
+	update_direction.emit(get_input_vector())
+	#if !block_input:
+	#update_animation_tree(velocity)
+	#pick_new_state(velocity)
+	#kinda hacky but it works
+	#for skill in skills:
+	#	if typeof(skill)!= TYPE_NIL:
+	#		skill._process(_delta)
+
+func _physics_process(_delta):
 	
 	move_and_slide()
 	
-func set_input_vector():
+	if iframe_count > 0:
+		iframe_count = iframe_count - 1
+	
+func get_input_vector():
 	var tmp = Vector2(Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 	Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up"))
 	
@@ -34,15 +67,16 @@ func set_input_vector():
 		tmp = tmp.normalized()
 	return tmp
 	
-	
-func update_animation_tree(direction):
-	if direction.length() > 0.1:
-		direction = direction.normalized()
-		animation_tree.set("parameters/Idle/blend_position", direction)
-		animation_tree.set("parameters/Walk/blend_position", direction)
-		
-func pick_new_state(direction):
-	if direction.length() > 0.1:
-		state_machine.travel("Walk")
-	else:
-		state_machine.travel("Idle")
+
+func _on_add_iframe(count:int):
+	iframe_count += count
+
+@warning_ignore("shadowed_variable", "shadowed_variable_base_class")
+func _on_normal_state_set_velocity(velocity:Vector2):
+	self.velocity = velocity
+	pass # Replace with function body.
+
+@warning_ignore("shadowed_variable", "shadowed_variable_base_class")
+func _on_dash_state_set_velocity(velocity:Vector2):
+	self.velocity = velocity
+	pass # Replace with function body.

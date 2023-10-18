@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv7f66kdvsu6k"]
+
+[ext_resource type="Script" path="res://Code/Skills/SkillProjectiles/Projectile.gd" id="1_bwxg2"]
+
+[node name="Projectile" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 76
+script = ExtResource("1_bwxg2")
