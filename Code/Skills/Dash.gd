@@ -4,7 +4,7 @@ extends Skill
 @export var dash_length: float = 200
 @export var speed: float = 800
 var travelled: float = 0
-var iframe_count:int
+#var iframe_count:int
 
 #var i:int = 0
 #var prev_finished:bool = true
@@ -12,17 +12,19 @@ var iframe_count:int
 signal dash_started
 signal dash_finished
 signal dash_speed
-signal add_iframe
+#signal add_iframe
 
 func _init():
 	#max_cd = 7
 	#max_charges = 3
+	set_physics_process(true)
 	pass
 	#super()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	iframe_count = ceil(dash_length / (get_physics_process_delta_time() * speed))
+	#iframe_count = ceil(dash_length / (get_physics_process_delta_time() * speed))
+	#print(ceil(dash_length / (get_physics_process_delta_time() * speed)))
 	super()
 	#set_process(false)
 	#set_physics_process(false)
@@ -52,17 +54,10 @@ func die():
 func _use(_direction:Vector2):
 	if current_charges < 1 :
 		return
-		
-	#if !prev_finished:
-	#	return
-		
-	set_process(true)
 	set_physics_process(true)
-	
-	#prev_finished = true
 	direction_vector = _direction.normalized()
 	dash_started.emit(direction_vector)
-	add_iframe.emit(iframe_count)
+	#add_iframe.emit(iframe_count)
 	use_a_charge()
 	travelled = 0
 

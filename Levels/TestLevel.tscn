@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://che4mx5qc4ph"]
+[gd_scene load_steps=19 format=3 uid="uid://che4mx5qc4ph"]
 
 [ext_resource type="Script" path="res://Code/debug/TestLevel.gd" id="1_e23sx"]
 [ext_resource type="PackedScene" uid="uid://uxkeyuswwyol" path="res://Prefabs/Camera.tscn" id="2_6w481"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dyu2siqr7rpmt" path="res://Assets/Tilesets/_PH_Wooden House.png" id="8_lkkap"]
 [ext_resource type="PackedScene" uid="uid://dep152alge1ow" path="res://Prefabs/Characters/MainCharacter/MainCharacter.tscn" id="9_x1fyk"]
 [ext_resource type="PackedScene" uid="uid://cmjvny3fqvya6" path="res://Prefabs/UI/ingame/IngameOverlay.tscn" id="10_diq18"]
+[ext_resource type="PackedScene" uid="uid://cd20i4s4c2ljj" path="res://Prefabs/Environment/test/TestWall.tscn" id="11_ms2qe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h60dj"]
 texture = ExtResource("3_6080s")
@@ -707,7 +708,7 @@ texture = ExtResource("8_lkkap")
 6:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_kqt6r"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_h60dj")
 sources/2 = SubResource("TileSetAtlasSource_yl2f4")
@@ -736,10 +737,21 @@ layer_1/tile_data = PackedInt32Array(-131086, 131075, 2, -131087, 65539, 2, -131
 
 [node name="MainCharacter" parent="." instance=ExtResource("9_x1fyk")]
 
+[node name="AnimationTree" parent="MainCharacter" index="3"]
+parameters/LightWeapon/blend_position = Vector2(0, 0)
+
 [node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_6w481")]
 target = NodePath("../MainCharacter")
 
 [node name="IngameOverlay" parent="." instance=ExtResource("10_diq18")]
+
+[node name="ControlsText" parent="IngameOverlay/Label" index="0"]
+text = "Use WASD to move
+Use Q to throw a package
+Use SPACE to dash
+Use SHIFT to block
+Use LMB to attack with the first weapon
+use RMB to attack with the second weapon"
 
 [node name="SkillIcon" parent="IngameOverlay/SkillIconContainer" index="0" node_paths=PackedStringArray("skill_to_monitor")]
 skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Dash")
@@ -747,8 +759,28 @@ skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Dash")
 [node name="SkillIcon2" parent="IngameOverlay/SkillIconContainer" index="1" node_paths=PackedStringArray("skill_to_monitor")]
 skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/PackageUser")
 
+[node name="SkillIcon3" parent="IngameOverlay/SkillIconContainer" index="2" node_paths=PackedStringArray("skill_to_monitor")]
+skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/LightWeapon")
+
+[node name="SkillIcon4" parent="IngameOverlay/SkillIconContainer" index="3" node_paths=PackedStringArray("skill_to_monitor")]
+skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/HeavyWeapon")
+
 [node name="SkillIcon5" parent="IngameOverlay/SkillIconContainer" index="4" node_paths=PackedStringArray("skill_to_monitor")]
 skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Block")
+
+[node name="TestWall" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(-0.999996, 56)
+
+[node name="TestWall2" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(-56, 1)
+rotation = 1.57786
+
+[node name="TestWall3" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(-0.999996, -55)
+
+[node name="TestWall4" parent="." instance=ExtResource("11_ms2qe")]
+position = Vector2(54, 1)
+rotation = 1.56523
 
 [editable path="MainCharacter"]
 [editable path="IngameOverlay"]
