@@ -6,48 +6,25 @@ class_name MainChar
 
 @export var starting_direction : Vector2 = Vector2(0, 1.0)
 
-#skill signals
-signal use_skill_dash
-signal use_skill_package
-signal use_weapon_1
-signal use_weapon_2
-signal use_skill_block
-signal end_skill_block
 
-signal update_direction
+#skill signals
+
+
+#signal update_direction
 
 func _init():
-	speed = 180
-	flag = "player"
+#	speed = 180
+	pass
 
 func _ready():
 	pass
 	
-func _process(_delta):
-	if Input.is_action_just_pressed("Package"):
-		use_skill_package.emit(get_local_mouse_position())
-			
-	if Input.is_action_just_pressed("Dash"):
-		use_skill_dash.emit(get_local_mouse_position())
-		
-	if Input.is_action_just_pressed("Block"):
-		use_skill_block.emit(get_local_mouse_position())
-		
-	if Input.is_action_just_released("Block"):
-		end_skill_block.emit()
-		
-	if Input.is_action_just_pressed("Weapon1"):
-		use_weapon_1.emit(get_local_mouse_position())
-		
-	if Input.is_action_just_pressed("Weapon2"):
-		use_weapon_2.emit(get_local_mouse_position())
-		
+#func _process(_delta):
 	#iframe_count = 1
-	if iframe_count > 0:
-		$Sprite2D.self_modulate  = Color("FFD700", 0.5)
-	else:
-		$Sprite2D.self_modulate  = Color("FFFFFF", 1)
-		
+	#if iframe_count > 0:
+	#	$Sprite2D.self_modulate  = Color("FFD700", 0.5)
+	#else:
+	#	$Sprite2D.self_modulate  = Color("FFFFFF", 1)
 		#read input for movement
 	#update_direction.emit(get_input_vector())
 	#if !block_input:
@@ -59,7 +36,6 @@ func _process(_delta):
 	#		skill._process(_delta)
 
 func _physics_process(_delta):
-	
 	move_and_slide()
 	
 	#if iframe_count > 0:

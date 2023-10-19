@@ -52,8 +52,16 @@ func _set_current(state:State, direction:Vector2):
 		current_state._exit()#get_parent())
 		state._enter(direction)
 		current_state = state
-	pass
+	#pass
 
 func _on_dash_started(direction:Vector2):
 	_set_current(states["DashState"], direction)
 	pass # Replace with function body.
+
+
+func _on_light_attack(direction:Vector2):
+	_set_current(states["LightWeaponState"], direction)
+
+
+func _on_heavy_attack(direction:Vector2):
+	_set_current(states["HeavyWeaponState"], direction)

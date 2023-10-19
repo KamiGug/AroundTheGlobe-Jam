@@ -2,11 +2,10 @@ extends CharacterBody2D
 class_name Character
 
 @export var speed = 160
-var flag = null #use a string like "player", "enemy", "npc", "destructible"
-var iframe_count : int = 60 #important to all characters to have iframes (or they'd die 2 fast)
+var iframe_count : int = 15 #important to all characters to have iframes (or they'd die 2 fast)
 var max_health : int = 3000
 var health : int = max_health
-var iframes_after_damage = 10
+@export var iframes_after_damage = 10
 var direction:Vector2
 
 @onready var animation_tree = $AnimationTree #get animation tree #all characters will have one of those
@@ -19,39 +18,29 @@ func _ready():
 	pass
 
 func _process(_delta):
-	#animations here	
 	pass
 
 func _physics_process(_delta):
-	
-	#collisions here
-	
-	if iframe_count > 0:
-		iframe_count = iframe_count - 1
-	
+	#if iframe_count > 0:
+	#	iframe_count = iframe_count - 1
+	pass
 	
 func set_input_vector():
 	#part of AI here - pathing
 	pass
 	
-func get_flag():
-	return flag
 	
-func handle_collision(collision : KinematicCollision2D):
-	print(collision.id)
-	
-	match collision.get_collider().get_flag():
-		"player":
-			pass
-			
-		"enemy":
-			pass
-			
-		"npc":
-			pass
-			
-		"destructible":
-			pass
+#func handle_collision(collision : KinematicCollision2D):
+#	print(collision.id)
+#	match collision.get_collider().get_flag():
+#		"player":
+#			pass			
+#		"enemy":
+#			pass			
+#		"npc":
+#			pass			
+#		"destructible":
+#			pass
 
 func take_damage(dmg : int):
 	if iframe_count > 0:

@@ -737,6 +737,9 @@ layer_1/tile_data = PackedInt32Array(-131086, 131075, 2, -131087, 65539, 2, -131
 
 [node name="MainCharacter" parent="." instance=ExtResource("9_x1fyk")]
 
+[node name="AnimationTree" parent="MainCharacter" index="3"]
+parameters/LightWeapon/blend_position = Vector2(0, 0)
+
 [node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_6w481")]
 target = NodePath("../MainCharacter")
 
@@ -747,6 +750,12 @@ skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Dash")
 
 [node name="SkillIcon2" parent="IngameOverlay/SkillIconContainer" index="1" node_paths=PackedStringArray("skill_to_monitor")]
 skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/PackageUser")
+
+[node name="SkillIcon3" parent="IngameOverlay/SkillIconContainer" index="2" node_paths=PackedStringArray("skill_to_monitor")]
+skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/LightWeapon")
+
+[node name="SkillIcon4" parent="IngameOverlay/SkillIconContainer" index="3" node_paths=PackedStringArray("skill_to_monitor")]
+skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/HeavyWeapon")
 
 [node name="SkillIcon5" parent="IngameOverlay/SkillIconContainer" index="4" node_paths=PackedStringArray("skill_to_monitor")]
 skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Block")

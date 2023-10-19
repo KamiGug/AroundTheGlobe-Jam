@@ -3,7 +3,14 @@ extends State
 
 #var direction:Vector2
 @export var speed:float = 160
-var velocity = Vector2.ZERO
+#var velocity = Vector2.ZERO
+
+signal use_skill_dash
+signal use_skill_package
+signal use_weapon_1
+signal use_weapon_2
+signal use_skill_block
+signal end_skill_block
 
 func _init():
 	super()
@@ -13,6 +20,23 @@ func _init():
 # Called when the node enters the scene tree for the first time.
 
 func _process(_delta):
+	if Input.is_action_just_pressed("Package"):
+		use_skill_package.emit(get_local_mouse_position())
+			
+	if Input.is_action_just_pressed("Dash"):
+		use_skill_dash.emit(get_local_mouse_position())
+		
+	if Input.is_action_just_pressed("Block"):
+		use_skill_block.emit(get_local_mouse_position())
+		
+	if Input.is_action_just_released("Block"):
+		end_skill_block.emit()
+		
+	if Input.is_action_just_pressed("Weapon1"):
+		use_weapon_1.emit(get_local_mouse_position())
+		
+	if Input.is_action_just_pressed("Weapon2"):
+		use_weapon_2.emit(get_local_mouse_position())
 	#direction = get_input_vector()
 	statee.direction = get_input_vector()
 	pass

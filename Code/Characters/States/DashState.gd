@@ -42,4 +42,3 @@ func _on_dash_speed(speed:float):
 func _on_dash_finished():
 	has_to_finish = true
 	can_finish = true
-	pass # Replace with function body.

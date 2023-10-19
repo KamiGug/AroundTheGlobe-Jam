@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu4w1hrf16nvf"]
+
+[ext_resource type="Script" path="res://Code/Skills/HeavyWeapon.gd" id="1_aqumg"]
+
+[node name="HeavyWeapon" type="StaticBody2D"]
+script = ExtResource("1_aqumg")
+max_cd = 0.5
