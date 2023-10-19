@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://c88wk2x75x0x4"]
+
+[ext_resource type="PackedScene" uid="uid://b7rkwf7jcge3w" path="res://Prefabs/Characters/MainChar.tscn" id="1_ium11"]
+[ext_resource type="Texture2D" uid="uid://dcybw45i5hhcg" path="res://Assets/Door.png" id="3_ido6b"]
+
+[sub_resource type="GDScript" id="GDScript_4rrll"]
+script/source = "extends Node2D
+
+
+func _process(delta):
+	change_scenes()
+
+
+func _on_back_to_office_body_entered(body):
+	if body.has_method(\"player\"):
+		globall.transition = true
+
+
+func _on_back_to_office_body_exited(body):
+	if body.has_method(\"player\"):
+		globall.transition = false
+		
+
+func change_scenes():
+	if globall.transition == true:
+		if globall.current_scene == 1: #and globall.gatekeep == 1:
+			get_tree().change_scene_to_file(\"res://Levels/world_3.tscn\")
+			globall.finish_changescenes()
+
+"
+
+[sub_resource type="GDScript" id="GDScript_bxv1p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1bwb"]
+radius = 11.0454
+
+[sub_resource type="GDScript" id="GDScript_1qaux"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4eyiy"]
+radius = 10.0499
+
+[node name="robo_world" type="Node2D"]
+script = SubResource("GDScript_4rrll")
+
+[node name="MainChar" parent="." instance=ExtResource("1_ium11")]
+speed = 200.0
+
+[node name="Back_to_office" type="Area2D" parent="."]
+script = SubResource("GDScript_bxv1p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back_to_office"]
+position = Vector2(-1, -59)
+shape = SubResource("CircleShape2D_s1bwb")
+
+[node name="Door" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-1, -60)
+texture = ExtResource("3_ido6b")
+
+[node name="Door2" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(182, -11)
+texture = ExtResource("3_ido6b")
+
+[node name="Go_to_lvl_2" type="Area2D" parent="."]
+script = SubResource("GDScript_1qaux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Go_to_lvl_2"]
+position = Vector2(182, -11)
+shape = SubResource("CircleShape2D_4eyiy")
+
+[connection signal="body_entered" from="Back_to_office" to="." method="_on_back_to_office_body_entered"]
+[connection signal="body_exited" from="Back_to_office" to="." method="_on_back_to_office_body_exited"]
