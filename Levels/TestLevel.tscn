@@ -745,6 +745,14 @@ target = NodePath("../MainCharacter")
 
 [node name="IngameOverlay" parent="." instance=ExtResource("10_diq18")]
 
+[node name="ControlsText" parent="IngameOverlay/Label" index="0"]
+text = "Use WASD to move
+Use Q to throw a package
+Use SPACE to dash
+Use SHIFT to block
+Use LMB to attack with the first weapon
+use RMB to attack with the second weapon"
+
 [node name="SkillIcon" parent="IngameOverlay/SkillIconContainer" index="0" node_paths=PackedStringArray("skill_to_monitor")]
 skill_to_monitor = NodePath("../../../MainCharacter/SkillComponent/Dash")
 

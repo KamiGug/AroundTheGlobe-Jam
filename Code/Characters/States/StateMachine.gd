@@ -65,3 +65,6 @@ func _on_light_attack(direction:Vector2):
 
 func _on_heavy_attack(direction:Vector2):
 	_set_current(states["HeavyWeaponState"], direction)
+
+func _on_knocked_back(knockback_vector:Vector2):
+	_set_current(states["DamagedState"],knockback_vector)

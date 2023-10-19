@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dep152alge1ow"]
+[gd_scene load_steps=71 format=3 uid="uid://dep152alge1ow"]
 
 [ext_resource type="Texture2D" uid="uid://c14syv0kufav" path="res://Assets/Characters/_PH_Basic Charakter Spritesheet.png" id="1_hobck"]
 [ext_resource type="Script" path="res://Code/Characters/MainChar.gd" id="1_v1xua"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://405soymm5gv8" path="res://Prefabs/Characters/States/DashState.tscn" id="5_kxkm0"]
 [ext_resource type="PackedScene" uid="uid://cpraikdv3625s" path="res://Prefabs/Characters/States/LightWeaponState.tscn" id="7_rpubh"]
 [ext_resource type="PackedScene" uid="uid://0gg7ejcuhi6q" path="res://Prefabs/Characters/States/HeavyWeaponState.tscn" id="8_54mmq"]
+[ext_resource type="PackedScene" uid="uid://bkbjcqp8330rw" path="res://Prefabs/Characters/States/DamagedState.tscn" id="9_0vyod"]
 [ext_resource type="PackedScene" uid="uid://cl1e6vpp1kgtw" path="res://Prefabs/Skills/Block.tscn" id="9_5lpup"]
 [ext_resource type="PackedScene" uid="uid://41n8t78lw4ml" path="res://Prefabs/Skills/LightWeapon.tscn" id="11_xjhph"]
 [ext_resource type="PackedScene" uid="uid://cu4w1hrf16nvf" path="res://Prefabs/Skills/HeavyWeapon.tscn" id="14_or8o1"]
@@ -1384,6 +1385,8 @@ min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_tlaig"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hvgup"]
 animation = &"light_weapon_down"
 
@@ -1451,6 +1454,8 @@ states/HeavyWeapon/node = SubResource("AnimationNodeBlendSpace2D_a477v")
 states/HeavyWeapon/position = Vector2(512, 204)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_0faeb")
 states/Idle/position = Vector2(348, 100)
+states/Knockback/node = SubResource("AnimationNodeBlendSpace2D_tlaig")
+states/Knockback/position = Vector2(693.007, 204)
 states/LightWeapon/node = SubResource("AnimationNodeBlendSpace2D_luttv")
 states/LightWeapon/position = Vector2(348, 204)
 states/Start/position = Vector2(88, 100)
@@ -1492,6 +1497,7 @@ active = true
 parameters/Dash/blend_position = Vector2(-0.00176054, 0.00480354)
 parameters/HeavyWeapon/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 1)
+parameters/Knockback/blend_position = Vector2(0, 0)
 parameters/LightWeapon/blend_position = Vector2(0.040493, -0.0261017)
 parameters/Walk/blend_position = Vector2(0, 0)
 
@@ -1505,6 +1511,8 @@ speed = 180.0
 [node name="LightWeaponState" parent="StateMachine" instance=ExtResource("7_rpubh")]
 
 [node name="HeavyWeaponState" parent="StateMachine" instance=ExtResource("8_54mmq")]
+
+[node name="DamagedState" parent="StateMachine" instance=ExtResource("9_0vyod")]
 
 [node name="SkillComponent" parent="." instance=ExtResource("3_t7x0f")]
 
@@ -1539,6 +1547,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_5mpnr")
 disabled = true
 
+[connection signal="knocked_back" from="." to="StateMachine" method="_on_knocked_back"]
 [connection signal="end_skill_block" from="StateMachine/NormalState" to="SkillComponent/Block" method="_on_end_skill_block"]
 [connection signal="use_skill_block" from="StateMachine/NormalState" to="SkillComponent/Block" method="_on_use_skill_block"]
 [connection signal="use_skill_dash" from="StateMachine/NormalState" to="SkillComponent/Dash" method="_on_use_skill_dash"]

@@ -8,6 +8,8 @@ var health : int = max_health
 @export var iframes_after_damage = 10
 var direction:Vector2
 
+signal knocked_back
+
 @onready var animation_tree = $AnimationTree #get animation tree #all characters will have one of those
 @onready var state_machine = animation_tree.get("parameters/playback") #that is the thing that determines the states
 
@@ -42,7 +44,7 @@ func set_input_vector():
 #		"destructible":
 #			pass
 
-func take_damage(dmg : int):
+func take_damage(dmg : int, knockback_value: float, direction: Vector2):
 	if iframe_count > 0:
 		return
 	if dmg >= health:
@@ -50,6 +52,7 @@ func take_damage(dmg : int):
 	else:
 		health = health - dmg
 		iframe_count = iframes_after_damage
+		knocked_back.emit(knockback_value * direction.normalized())
 	
 func heal(this : int):
 	health = health + this
