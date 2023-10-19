@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Hammer.mp3-1a2d58383de730b43f026a61239218e4.m
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
