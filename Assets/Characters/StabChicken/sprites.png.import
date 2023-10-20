@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq8lh2bbn0dot"
-path="res://.godot/imported/skill_icon_block.png-009a300c08a9c3c5e5f141a66678de9c.ctex"
+uid="uid://ivpj2o3ucvs"
+path="res://.godot/imported/sprites.png-edf83dc1376aa7988de8e528e8e7c3ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/skill_icon_block.png"
-dest_files=["res://.godot/imported/skill_icon_block.png-009a300c08a9c3c5e5f141a66678de9c.ctex"]
+source_file="res://Assets/Characters/StabChicken/sprites.png"
+dest_files=["res://.godot/imported/sprites.png-edf83dc1376aa7988de8e528e8e7c3ef.ctex"]
 
 [params]
 

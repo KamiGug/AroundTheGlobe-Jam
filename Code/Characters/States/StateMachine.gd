@@ -39,7 +39,7 @@ func _ready():
 func _process(delta):
 	current_state._animate()
 	if current_state.has_to_finish:
-		_set_current(states["NormalState"], get_parent().direction)
+		_set_current(states[main_state_name], get_parent().direction)
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
@@ -68,3 +68,11 @@ func _on_heavy_attack(direction:Vector2):
 
 func _on_knocked_back(knockback_vector:Vector2):
 	_set_current(states["DamagedState"],knockback_vector)
+
+
+func _on_weapon_collision_body_entered(body):
+	if current_state.has_method("deal_damage"):
+		current_state.deal_damage(body, body.position - get_parent().position)
+	else:
+		print("on weapon collision no 'deal damage' method! current state: ", current_state.name)
+	pass # Replace with function body.

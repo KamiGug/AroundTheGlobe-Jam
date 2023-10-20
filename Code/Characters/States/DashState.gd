@@ -1,7 +1,7 @@
 class_name DashState
 extends State
 
-
+var prev_collision_layer
 # Called when the node enters the scene tree for the first time.
 
 
@@ -18,11 +18,14 @@ func _enter(direction:Vector2):
 	can_finish = false
 	statee.iframe_count += 1
 	statee.collision_mask = statee.collision_mask - (1 + 8 + 16 + 64)
+	prev_collision_layer = statee.collision_layer
+	statee.collision_layer = 128
 	#set_physics_mask.emit()
 	#delete from mask passable enivironment mask from caster
 	
 func _exit():
 	statee.collision_mask = statee.collision_mask + (1 + 8 + 16 + 64)
+	statee.collision_layer = prev_collision_layer
 	super()
 	#_animate(anim_tree,state_machine)
 	#set_physics_mask.emit()

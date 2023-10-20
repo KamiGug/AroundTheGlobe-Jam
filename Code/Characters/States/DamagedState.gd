@@ -2,7 +2,7 @@ class_name DamagedState
 extends State
 
 #var knockback_value: float
-var knockback_time: float = 1.0/6.0
+var knockback_time: float = 1.0/12.0
 var curr_time:float
 
 # Called when the node enters the scene tree for the first time.

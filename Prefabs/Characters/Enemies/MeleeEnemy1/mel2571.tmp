@@ -1006,8 +1006,8 @@ parameters/Walk/blend_position = Vector2(-0.550265, 0.0144104)
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_c4763")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
-collision_layer = 8
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 68
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

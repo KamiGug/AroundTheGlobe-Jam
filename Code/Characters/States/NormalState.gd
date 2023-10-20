@@ -26,8 +26,8 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Dash"):
 		use_skill_dash.emit(get_local_mouse_position())
 		
-	if Input.is_action_just_pressed("Block"):
-		use_skill_block.emit(get_local_mouse_position())
+	#if Input.is_action_just_pressed("Block"):
+	#	use_skill_block.emit(get_local_mouse_position())
 		
 	if Input.is_action_just_released("Block"):
 		end_skill_block.emit()

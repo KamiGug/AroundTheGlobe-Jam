@@ -1,16 +1,7 @@
 extends Character
 class_name MainChar
 
-#get_local_mouse_position().normalized()
-
-
-@export var starting_direction : Vector2 = Vector2(0, 1.0)
-
-
-#skill signals
-
-
-#signal update_direction
+#@export var starting_direction : Vector2 = Vector2(0, 1.0)
 
 func _init():
 #	speed = 180

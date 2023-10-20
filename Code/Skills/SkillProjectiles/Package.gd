@@ -29,3 +29,9 @@ func _physics_process(delta):
 	#collisions here #if they are to be here
 	
 
+func _explode():
+	#do exploding here
+	die()
+	
+func _shoot(direction):
+	pass

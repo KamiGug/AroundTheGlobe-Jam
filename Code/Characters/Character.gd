@@ -6,7 +6,7 @@ var iframe_count : int = 15 #important to all characters to have iframes (or the
 var max_health : int = 3000
 var health : int = max_health
 @export var iframes_after_damage = 10
-var direction:Vector2
+@export var direction:Vector2 = Vector2(0, 1)
 
 signal knocked_back
 

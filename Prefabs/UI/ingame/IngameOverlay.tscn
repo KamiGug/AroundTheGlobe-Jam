@@ -62,6 +62,3 @@ layout_mode = 2
 
 [node name="SkillIcon4" parent="SkillIconContainer" instance=ExtResource("1_sucak")]
 layout_mode = 2
-
-[node name="SkillIcon5" parent="SkillIconContainer" instance=ExtResource("1_sucak")]
-layout_mode = 2

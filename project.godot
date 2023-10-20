@@ -95,6 +95,7 @@ Package={
 2d_physics/layer_5="NPC"
 2d_physics/layer_6="Pickup"
 2d_physics/layer_7="Projectile"
+2d_physics/layer_8="Dasher"
 
 [rendering]
 

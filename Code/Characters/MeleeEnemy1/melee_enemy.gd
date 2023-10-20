@@ -1,6 +1,7 @@
+class_name StabChicken
 extends Character
 
-@export var self_knockback: float = 10
+#@export var self_knockback: float = 10
 
 func _physics_process(delta):
 	move_and_slide()

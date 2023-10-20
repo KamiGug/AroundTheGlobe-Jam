@@ -3,8 +3,8 @@ class_name SkillComponent
 #can use for UI elements like timers for cds etc
 #will listen for signals and use skills
 
-var global_cd_max: float = 0.25
-var global_cd_current:float = 0
+#var global_cd_max: float = 0.25
+#var global_cd_current:float = 0
 
 var skills: Array[Skill]
 
