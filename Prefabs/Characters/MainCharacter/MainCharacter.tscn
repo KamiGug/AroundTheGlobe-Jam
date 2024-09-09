@@ -1496,7 +1496,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_gogr7")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/Dash/blend_position = Vector2(-0.00176054, 0.00480354)
 parameters/HeavyWeapon/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 1)
